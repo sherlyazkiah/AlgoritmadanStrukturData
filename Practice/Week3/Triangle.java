@@ -8,4 +8,13 @@ public class Triangle {
         base = a;
         height = t;
     }
+    
+    public double countArea() {
+        return 0.5*base*height;
+    }
+
+    public double countPerimeter() {
+        double side = Math.sqrt(Math.pow(base/2.0, 2) + Math.pow(height, 2));
+        return 2*side+base;
+    }
 }
