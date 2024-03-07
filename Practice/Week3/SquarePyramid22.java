@@ -1,25 +1,25 @@
 package Week3;
 
 public class SquarePyramid22 {
-    int side, height;
+    int s, h;
 
-    public SquarePyramid22(int side, int height){
-        side = this.side;
-        height = this.height;
+    SquarePyramid22(int sisi, int height) {
+        s = sisi;
+        h = height;
     }
 
     double calcVol() {
         double vol = 0;
-        vol = (1.0/3.0)*(side*side)*height;
+        vol = (1.0/3.0)*(s*s)*h;
         return vol;
     }
 
     double calcSurface() {
         double sur = 0;
-        double baseArea = side*side;
-        double hypotenuse = Math.sqrt((height*height)+(0.5*side*0.5*side));
-        double lsgtg = 0.5*side*hypotenuse;
-        sur = baseArea+4*lsgtg;
+        double la = s*s;
+        double sm = Math.sqrt((h*h)+(0.5*s*0.5*s));
+        double lsgtg = 0.5*s*sm;
+        sur = la+4*lsgtg;
         return sur;
     }
 }
