@@ -1,9 +1,9 @@
 package Week3;
 
-public class Sphere {
+public class Sphere22 {
     int r;
 
-    public Sphere(int j) {
+    public Sphere22(int j) {
         r = j;
     }
 
