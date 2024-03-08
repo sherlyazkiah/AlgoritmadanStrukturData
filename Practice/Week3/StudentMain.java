@@ -28,7 +28,27 @@ public class StudentMain {
             System.out.println();
         }
 
-        sc.close();
+        double sum = 0;
+        for (int i = 0; i < std.length; i++) {
+            sum = sum + std[i].GPA;
+        }
+
+        double avg = sum/std.length;
+        System.out.println("Average GPA : " + avg);
+        System.out.println();
         
+        double maxGPA = std[0].GPA;
+        int idx = 0;
+        for (int i = 0; i < std.length; i++) {
+            if (std[i].GPA > maxGPA) {
+                maxGPA = std[i].GPA;
+                idx = i;
+            }
+        }
+        System.out.println("Student that has biggest GPA");
+        std[idx].print();
+
+        sc.close();
+
     }
 }
