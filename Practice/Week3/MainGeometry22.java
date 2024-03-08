@@ -22,8 +22,8 @@ public class MainGeometry22 {
             sqp[i] = new SquarePyramid22(ssPyramid,hPyramid);
         }
 
-
         System.out.println();
+        
         for (int i = 0; i < 3; i++) {
             System.out.println("Sphere " + i + " - Volume: " + sp[i].calcVol() + ", Surface area: " + sp[i].calcSurface());
         }
