@@ -15,8 +15,7 @@ public class Faktorial {
     public int faktorialDC(int n) {
         if (n==1) {
             return 1;
-        }
-        else {
+        } else {
             int fakto = n * faktorialDC(n-1);
             return fakto;
         }

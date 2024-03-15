@@ -10,6 +10,7 @@ public class MainFaktorial {
         int elemen = sc.nextInt();
 
         Faktorial [] fk = new Faktorial[elemen];
+
         for (int i = 0; i < elemen; i++) {
             fk[i] = new Faktorial();
             System.out.print("Input the data value to-" + (i+1) + " : ");
@@ -22,7 +23,7 @@ public class MainFaktorial {
             System.out.println("Factorial of value " + fk[i].num + " is : " + fk[i].faktorialBF(fk[i].num));
         }
         System.out.println("=======================================================");
-        System.out.println("Factorial Result with Divied nd Conquer");
+        System.out.println("Factorial Result with Divied and Conquer");
         for (int i = 0; i < elemen; i++) {
             System.out.println("Factorial of value " + fk[i].num + " is : " + fk[i].faktorialDC(fk[i].num));
         }
