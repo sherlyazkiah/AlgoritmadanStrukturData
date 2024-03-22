@@ -22,7 +22,7 @@ public class StudentList {
 
     void bubbleSort() {
         for (int i = 0; i < list.length-1; i++) {
-            for (int j = 0; j < list.length-i; j++) {
+            for (int j = 1; j < list.length-i; j++) {
                 if (list[j].gpa > list[j-1].gpa) {
                     //SWAP
                     Student tmp = list[j];
@@ -30,7 +30,6 @@ public class StudentList {
                     list[j-1] = tmp;
                 }
             }
-            
         }
     }
 }
