@@ -32,4 +32,19 @@ public class StudentList {
             }
         }
     }
+
+    void selectionSort() {
+        for (int i = 0; i < list.length-1; i++) {
+            int idxMin = i;
+            for (int j = i+1; j < list.length; j++) {
+                if (list[j].gpa < list[idxMin].gpa) {
+                    idxMin = j;
+                }
+            }
+            //SWAP
+            Student tmp = list[idxMin];
+            list[idxMin] = list[i];
+            list[i] = tmp;
+        }
+    }
 }

@@ -26,8 +26,12 @@ public class Main {
 
         System.out.println("Unsorted student list:");
         data.print();
-        System.out.println("Student data after sorting depends the GPA = ");
+        System.out.println("Student data after sorting depends on the GPA = ");
         data.bubbleSort();
+        data.print();
+
+        System.out.println("Ascending Sorted student list:");
+        data.selectionSort();
         data.print();
 
         s1.close();
