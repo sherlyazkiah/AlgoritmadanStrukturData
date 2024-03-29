@@ -47,4 +47,16 @@ public class StudentList {
             list[i] = tmp;
         }
     }
+    
+    void insertionSort() {
+        for (int i = 0; i < list.length; i++) {
+            Student tmp = list[i];
+            int j = i;
+            while (j > 0 && list[j-i].gpa > tmp.gpa) {
+                list[j] = list[j-1];
+                j--;
+            }
+            list[j] = tmp;
+        }
+    }
 }

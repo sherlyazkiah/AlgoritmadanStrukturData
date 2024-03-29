@@ -29,6 +29,11 @@ public class MainFaktorial {
         }
         System.out.println("=======================================================");
 
+        long startTime = System.nanoTime();
+        long endTime = System.nanoTime();
+        long duration = (endTime - startTime);
+        System.out.println("Execution time: " + duration + " nanoseconds");
+        
         sc.close();
     }
 }

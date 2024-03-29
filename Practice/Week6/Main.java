@@ -34,6 +34,10 @@ public class Main {
         data.selectionSort();
         data.print();
 
+        System.out.println("Ascending Sorted student list:");
+        data.insertionSort();
+        data.print();
+
         s1.close();
         s2.close();
     }
