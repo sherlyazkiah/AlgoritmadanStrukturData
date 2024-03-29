@@ -12,7 +12,7 @@ public class MainSquared {
         Squared [] png = new Squared[elemen];
 
         for (int i = 0; i < elemen; i++) {
-            png[i] = new Squared();
+            png[i] = new Squared(elemen, i);
             System.out.print("Input the value to be squared to-" + (i+1) + " : ");
             png[i].num = sc.nextInt();
             System.out.print("Input the square value to-" + (i+1) + " : ");

@@ -4,6 +4,11 @@ public class Squared {
 
     public int num, squared;
 
+    public Squared(int num, int squared) {
+        this.num = num;
+        this.squared = squared;
+    }
+
     public int squareBF(int a, int n) {
         int result = 1;
         for (int i = 0; i < n; i++) {
