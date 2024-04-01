@@ -7,7 +7,7 @@ public class Main {
         Scanner s1 = new Scanner(System.in);
         Scanner s2 = new Scanner(System.in);
 
-        StudentList data = new StudentList();
+        HighAchieverStudent data = new HighAchieverStudent();
         int n = 5;
 
         for (int i = 0; i < n; i++) {

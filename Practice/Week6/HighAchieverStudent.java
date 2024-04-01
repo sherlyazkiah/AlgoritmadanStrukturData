@@ -1,6 +1,6 @@
 package Week6;
 
-public class StudentList {
+public class HighAchieverStudent {
     Student list[] = new Student[5];
     int idx;
 
