@@ -7,25 +7,31 @@ public class MainSum {
         Scanner sc = new Scanner(System.in);
         System.out.println("=======================================================");
         System.out.println("Program for Calculating Total Profits");
-        System.out.println("Input the Number of Months : ");
-        int totElemen = sc.nextInt();
-        Sum sm = new Sum(totElemen);
-        sm.elemen = totElemen;
+        System.out.print("Input the Number of Companies: ");
+        int numCompanies = sc.nextInt();
+       
+        Sum[] companies = new Sum[numCompanies];
 
         System.out.println("=======================================================");
-        for (int i = 0; i < sm.elemen; i++) {
-            System.out.print("Input the profit of the month to - " + (i+1) + " = ");
-            sm.profit[i] = sc.nextDouble();
+        for (int i = 0; i < numCompanies; i++) {
+            System.out.print("Input the number of months for company " + (i+1) + ": ");
+            int months = sc.nextInt();
+            companies[i] = new Sum(months);
+
+            System.out.println("Input profits for company " + (i+1) + " : ");
+            for (int j = 0; j < months; j++) {
+                System.out.print("Profit for month " + (j+1) + " = ");
+                companies[i].profit[j] = sc.nextDouble();
+            }
         }
 
         System.out.println("=======================================================");
-        System.out.println("Algoritma Brute Force");
-        System.out.println("Total profits of the company for " + sm.elemen + " month is = "
-                + sm.totalBF(sm.profit));
+        for (int i = 0; i < companies.length; i++) {
+            System.out.println("Company " + (i+1) + " - Total profits:");
+            System.out.println("Algoritma Brute Force = " + companies[i].totalBF(companies[i].profit));
+            System.out.println("Algoritma Divide Conquer = " + companies[i].totalDC(companies[i].profit, 0, companies[i].elemen-1));
+        }
         System.out.println("=======================================================");
-        System.out.println("Algoritma Divide Conquer");
-        System.out.println("Total profits of the company for " + sm.elemen + " month is = "
-                + sm.totalDC(sm.profit, 0, sm.elemen-1));
 
         sc.close();
     }
