@@ -34,8 +34,8 @@ public class Main {
         data.selectionSort();
         data.print();
 
-        System.out.println("Ascending Sorted student list:");
-        data.insertionSort();
+        System.out.println("Descending Sorted student list:");
+        data.insertionSort(false);;
         data.print();
 
         s1.close();

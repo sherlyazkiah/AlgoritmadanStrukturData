@@ -59,4 +59,25 @@ public class HighAchieverStudent {
             list[j] = tmp;
         }
     }
+
+    void insertionSort(boolean asc) {
+        for (int i = 1; i < list.length; i++) {
+            Student temp = list[i];
+            int j = i - 1;
+            if (asc) {
+                // Ascending order sorting algorithm
+                while (j >= 0 && list[j].gpa > temp.gpa) {
+                    list[j + 1] = list[j];
+                    j--;
+                }
+            } else {
+                // Descending order sorting algorithm
+                while (j >= 0 && list[j].gpa < temp.gpa) {
+                    list[j + 1] = list[j];
+                    j--;
+                }
+            }
+            list[j + 1] = temp;
+        }
+    }   
 }
