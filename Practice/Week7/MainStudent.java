@@ -40,6 +40,11 @@ public class MainStudent {
         data.showPosition(search, position);
         data.showData(search, position);
 
+        System.out.println();
+        System.out.println("Sorting Data");
+        data.bubbleSort();
+        data.display();
+
         System.out.println("____________________________");
         System.out.println("____________________________");
         System.out.print("Search student by NIM: ");

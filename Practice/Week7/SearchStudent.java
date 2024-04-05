@@ -60,4 +60,18 @@ public class SearchStudent {
         }
         return -1;
     }
+
+    public void bubbleSort() {
+        int n = listStd.length;
+        for (int i = 0; i < n-1; i++) {
+            for (int j = 0; j < n-i-1; j++) {
+                if (listStd[j].nim > listStd[j+1].nim) {
+                    // Swap listStd[j] and listStd[j+1]
+                    Students temp = listStd[j];
+                    listStd[j] = listStd[j+1];
+                    listStd[j+1] = temp;
+                }
+            }
+        }
+    }    
 }
