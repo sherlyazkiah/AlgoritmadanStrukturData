@@ -73,5 +73,34 @@ public class SearchStudent {
                 }
             }
         }
-    }    
+    }
+
+    public int findByNameSeqSearch(String name) {
+        for (int i = 0; i < listStd.length; i++) {
+            if (listStd[i].name.equalsIgnoreCase(name)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    // In SearchStudent class
+    public void showPositionByName(String name, int pos) {
+        if (pos != -1) {
+            System.out.println("Data " + name + " is found in index-" + pos);
+        } else {
+            System.out.println("Data " + name + " is not found");
+        }
+    }
+
+    public void showData(String name, int pos) {
+        if (pos != -1) {
+            System.out.println("Name \t : " + name);
+            System.out.println("NIM \t : " + listStd[pos].nim);
+            System.out.println("Age \t : " + listStd[pos].age);
+            System.out.println("GPA \t : " + listStd[pos].gpa);
+        } else {
+            System.out.println("Data " + name + " is not found");
+        }
+    }
 }

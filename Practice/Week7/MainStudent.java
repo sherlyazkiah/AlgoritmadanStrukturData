@@ -54,6 +54,15 @@ public class MainStudent {
         data.showPosition(search1, position1);
         data.showData(search1, position1);
 
+        System.out.println("____________________________");
+        System.out.println("____________________________");
+        System.out.print("Search student by Name: ");
+        String searchName = sl.nextLine();
+        System.out.println("Using Sequential Search by Name");
+        int positionByName = data.findByNameSeqSearch(searchName);
+        data.showPositionByName(searchName, positionByName);
+        data.showData(searchName, positionByName);
+
         s.close();
         sl.close();
     }
