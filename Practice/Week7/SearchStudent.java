@@ -49,4 +49,15 @@ public class SearchStudent {
             System.out.println("Data " + x + " is not found");
         }
     }
+
+    public int FindBinarySearch(int search, int left, int right) {
+        int mid;
+        if (right >= left) {
+            mid = (left + right) / 2;
+            if (search == listStd[mid].nim) {
+                return (mid);
+            }
+        }
+        return -1;
+    }
 }

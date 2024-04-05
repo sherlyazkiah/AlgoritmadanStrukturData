@@ -40,6 +40,15 @@ public class MainStudent {
         data.showPosition(search, position);
         data.showData(search, position);
 
+        System.out.println("____________________________");
+        System.out.println("____________________________");
+        System.out.print("Search student by NIM: ");
+        int search1 = s.nextInt();
+        System.out.println("Using Binary Search");
+        int position1 = data.findSeqSearch(search1);
+        data.showPosition(search1, position1);
+        data.showData(search1, position1);
+
         s.close();
         sl.close();
     }
