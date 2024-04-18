@@ -9,34 +9,54 @@ public class BookMain {
 
         char choose;
         do {
-            System.out.print("Title : ");
-            String title = sc.nextLine();
+            System.out.println("Choose an operation:");
+            System.out.println("1. Push");
+            System.out.println("2. Pop");
+            System.out.println("3. Peek");
+            System.out.println("4. Print");
+            System.out.print("Enter your choice: ");
+            int choice = sc.nextInt();
+            sc.nextLine();
 
-            System.out.print("Author Name : ");
-            String name = sc.nextLine();
+            switch (choice) {
+                case 1:
+                    System.out.print("Title : ");
+                    String title = sc.nextLine();
 
-            System.out.print("Published Year : ");
-            int year = sc.nextInt();
+                    System.out.print("Author Name : ");
+                    String name = sc.nextLine();
 
-            System.out.print("Pages Amount : ");
-            int pages = sc.nextInt();
+                    System.out.print("Published Year : ");
+                    int year = sc.nextInt();
 
-            System.out.print("Price : ");
-            int price = sc.nextInt();
+                    System.out.print("Pages Amount : ");
+                    int pages = sc.nextInt();
 
-            Book bk = new Book(title, name, year, pages, price);
-            System.out.print("Do you want to add new data to stack (y/n)? ");
+                    System.out.print("Price : ");
+                    int price = sc.nextInt();
+
+                    Book bk = new Book(title, name, year, pages, price);
+                    st.push(bk);
+                    break;
+                case 2:
+                    st.pop();
+                    break;
+                case 3:
+                    st.peek();
+                    break;
+                case 4:
+                    st.print();
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please choose again.");
+            }
+            
+            System.out.print("Back to menu (y/n)? ");
             choose = sc.next().charAt(0);
             System.out.println();
             sc.nextLine();
-            st.push(bk);
 
         } while (choose == 'y');
-
-        st.print();
-        st.pop();
-        st.peek();
-        st.print();
 
         sc.close();
     }
