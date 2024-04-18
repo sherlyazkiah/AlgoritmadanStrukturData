@@ -1,13 +1,12 @@
 package Week8;
 
-public class Stack {
-    int size;
-    int top;
-    int data[];
+public class BookStack {
+    int size, top;
+    Book data[];
 
-    public Stack(int size) {
+    public BookStack(int size) {
         this.size = size;
-        data = new int[size];
+        data = new Book[size];
         top = -1;
     }
 
@@ -27,7 +26,7 @@ public class Stack {
         }
     }
 
-    public void push(int dt) {
+    public void push(Book dt) {
         if (!IsFull()) {
             top++;
             data[top] = dt;
@@ -38,9 +37,11 @@ public class Stack {
 
     public void pop() {
         if (!IsEmpty()) {
-            int x = data[top];
+            Book x = data[top];
             top--;
-            System.out.println("Remove data : " + x);
+            System.out.println("Remove data : " + x.title + " " +
+                    x.authorName + " " + x.publishedYear + " " +
+                    x.pagesAmount + " " + x.price);
         } else {
             System.out.println("Stack is empty");
         }
@@ -53,7 +54,9 @@ public class Stack {
     public void print() {
         System.out.println("Stack content: ");
         for (int i = top; i >- 0; i--) {
-            System.out.println(data[i] + " ");
+            System.out.println(data[i].title + " " +
+            data[i].authorName + " " + data[i].publishedYear + " " +
+            data[i].pagesAmount + " " + data[i].price);
         }
         System.out.println("");
     }
@@ -68,6 +71,4 @@ public class Stack {
             System.out.println("Failed! Stack is still empty");
         }
     }
-
-    
 }
