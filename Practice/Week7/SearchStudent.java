@@ -1,8 +1,13 @@
 package Week7;
 
 public class SearchStudent {
-    Students[] listStd = new Students[5];
+    Students[] listStd;
     int idx;
+
+    public SearchStudent(int amountStudent) {
+        this.listStd = new Students[amountStudent];
+        this.idx = 0;
+    }
 
     public void add(Students std) {
         if (idx < listStd.length) {
@@ -50,12 +55,16 @@ public class SearchStudent {
         }
     }
 
-    public int FindBinarySearch(int search, int left, int right) {
+    public int FindBinarySearch(int cari, int left, int right) {
         int mid;
         if (right >= left) {
             mid = (left + right) / 2;
-            if (search == listStd[mid].nim) {
+            if (cari == listStd[mid].nim) {
                 return (mid);
+            } else if (listStd[mid].nim > cari) {
+                return FindBinarySearch(cari, left, mid-1);
+            } else {
+                return FindBinarySearch(cari, mid+1, right);
             }
         }
         return -1;
@@ -84,7 +93,6 @@ public class SearchStudent {
         return -1;
     }
 
-    // In SearchStudent class
     public void showPositionByName(String name, int pos) {
         if (pos != -1) {
             System.out.println("Data " + name + " is found in index-" + pos);
@@ -95,12 +103,12 @@ public class SearchStudent {
 
     public void showData(String name, int pos) {
         if (pos != -1) {
-            System.out.println("Name \t : " + name);
             System.out.println("NIM \t : " + listStd[pos].nim);
+            System.out.println("Name \t : " + name);
             System.out.println("Age \t : " + listStd[pos].age);
             System.out.println("GPA \t : " + listStd[pos].gpa);
         } else {
-            System.out.println("Data " + name + " is not found");
+            System.out.println("Data : " + name + " is not found");
         }
     }
 }
