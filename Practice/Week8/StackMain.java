@@ -14,5 +14,9 @@ public class StackMain {
         stk.pop();
         stk.peek();
         stk.print();
+        
+        stk.push(18);
+        stk.push(40);
+        stk.print();
     }
 }
