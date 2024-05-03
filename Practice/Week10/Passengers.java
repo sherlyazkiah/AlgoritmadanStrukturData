@@ -39,7 +39,9 @@ public class Passengers {
 
     public void peek() {
         if (!IsEmpty()) {
-            System.out.println("The first element : " + Q[front]);
+            System.out.println("The first element : " + Q[front].name + " "
+            + Q[front].cityOrigin + " " + Q[front].cityDestination + " " +
+            Q[front].ticketAmount + " " + Q[front].price);
         } else {
             System.out.println("Queue is still empty");
         }
@@ -51,7 +53,9 @@ public class Passengers {
         } else {
             int i = front;
             while (i != rear) {
-                System.out.println(Q[i] + " ");
+                System.out.println("The first element : " + Q[front].name + " "
+            + Q[front].cityOrigin + " " + Q[front].cityDestination + " " +
+            Q[front].ticketAmount + " " + Q[front].price);
                 i = (i+1) % max;
                 
             }
