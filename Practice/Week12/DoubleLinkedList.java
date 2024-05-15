@@ -38,11 +38,11 @@ public class DoubleLinkedList {
         }
     }
 
-    public void add(int item, int index) throws Exception{
+    public void add(int item, int index) {
         if (isEmpty()) {
             addFirst(item);
         } else if (index < 0 || index > size) {
-            throw new Exception("Index out of bound");
+            System.out.println("Index out of bound");
         } else {
             Node current = head;
             int i = 0;
