@@ -19,5 +19,22 @@ public class DLLMain {
         DLL.clear();
         DLL.print();
         System.out.println("Size : " + DLL.size());
+
+        DLL.addLast(50);
+        DLL.addLast(40);
+        DLL.addLast(10);
+        DLL.addLast(20);
+        DLL.print();
+        System.out.println("Size : " + DLL.size());
+        System.out.println("==================================");
+        DLL.removeFirst();
+        DLL.print();
+        System.out.println("Size : " + DLL.size());
+        System.out.println("==================================");
+        DLL.removeLast();
+        DLL.print();
+        System.out.println("Size : " + DLL.size());
+        System.out.println("==================================");
+        
     }
 }

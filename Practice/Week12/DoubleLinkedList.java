@@ -109,7 +109,7 @@ public class DoubleLinkedList {
         }
         Node current = head;
         while (current.next.next != null) {
-            current.next = null;
+            current = current.next;
         }
         current.next = null;
         size--;
