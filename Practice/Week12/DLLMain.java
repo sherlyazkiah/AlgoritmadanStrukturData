@@ -35,6 +35,8 @@ public class DLLMain {
         DLL.print();
         System.out.println("Size : " + DLL.size());
         System.out.println("==================================");
-        
+        DLL.remove(1);
+        DLL.print();
+        System.out.println("Size : " + DLL.size());
     }
 }
