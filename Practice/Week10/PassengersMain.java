@@ -9,6 +9,7 @@ public class PassengersMain {
         System.out.println("2. Dequeue");
         System.out.println("3. Check first queue");
         System.out.println("4. Check all queue");
+        System.out.println("5. Peek Rear");
         System.out.println("=======================");
     }
 
@@ -54,6 +55,9 @@ public class PassengersMain {
                     break;
                 case 4:
                     queuePassenger.print();
+                    break;
+                case 5:
+                    queuePassenger.peekRear();
                     break;
             }
         } while (choose <= 4 && choose >=1);
