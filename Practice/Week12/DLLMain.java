@@ -38,5 +38,23 @@ public class DLLMain {
         DLL.remove(1);
         DLL.print();
         System.out.println("Size : " + DLL.size());
+        DLL.clear();
+
+        DLL.print();
+        System.out.println("Size : " + DLL.size());
+        System.out.println("==================================");
+        DLL.addFirst(3);
+        DLL.addLast(4);
+        DLL.addFirst(7);
+        DLL.print();
+        System.out.println("Size : " + DLL.size());
+        System.out.println("==================================");
+        DLL.add(40, 1);
+        DLL.print();
+        System.out.println("Size : " + DLL.size());
+        System.out.println("==================================");
+        System.out.println("Data in the head of linked list is : " + DLL.getFirst());
+        System.out.println("Data in the tail of linked list is : " + DLL.getLast(0));
+        System.out.println("Data in the 1st index linked list is : " + DLL.get(1));
     }
 }

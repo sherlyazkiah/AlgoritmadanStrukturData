@@ -140,4 +140,33 @@ public class DoubleLinkedList {
             size--;
         }
     }
+
+    public int getFirst() {
+        if (isEmpty()) {
+            System.out.println("Linked list still empty");
+        }
+        return head.data;
+    }
+
+    public int getLast(int index) {
+        if (isEmpty()) {
+            System.out.println("Linked list still empty");
+        }
+        Node tmp = head;
+        while (tmp.next != null) {
+            tmp = tmp.next;
+        }
+        return tmp.data;
+    }
+
+    public int get(int index) {
+        if (isEmpty()) {
+            System.out.println("Linked list still empty");
+        }
+        Node tmp = head;
+        for (int i = 0; i < index; i++) {
+            tmp = tmp.next;
+        }
+        return tmp.data;
+    }
 }
