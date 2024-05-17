@@ -3,7 +3,6 @@ package quiz2;
 public class DoubleLinkedList {
     Node head, tail;
     int size;
-    
     DoubleLinkedList(){
         head = tail = null;
         size=0;
@@ -41,11 +40,13 @@ public class DoubleLinkedList {
      */
     void addLast(int data){
         Node nu = new Node(data);
-        if(isEmpty()){
-            addFirst(data);
-        }else{
-            nu.next = head;
-            head = nu;
+        if (isEmpty()){
+            head = tail = nu;
+        } else{
+            //complete here
+            tail.n = nu;
+            nu.p = tail;
+            tail = nu;
         }
         size++;
     }
@@ -54,28 +55,30 @@ public class DoubleLinkedList {
      * this method will remove tail
      */
     void deleteLast(){
-       if (isEmpty()) {
-        System.out.println("Linked list is still empty, cannot remove"); 
-        } else if (head.next == null) {
-            head = null;
+        if (isEmpty()) {
+            System.out.println("Linked list is still empty, cannot remove");
+        } else if (head == tail) {
+            head = tail = null;
             size--;
-            return;
+        } else {
+            tail = tail.p;
+            if (tail != null) {
+                tail.n = null;
+            }
+            size--;
         }
-        Node current = head;
-        while (current.n.n != null) {
-            current = current.n;
-        }
-        current.n = null;
-        size--;
     }
-
     //3. complete the printFromTail
     /**
      * this method will print all data from tail to head
      */
     void printFromTail(){
-        
-        
+        Node tmp = tail;
+        while (tmp != null) {
+            System.out.print("" + tmp.data + "-");
+            tmp = tmp.p;
+        }
+        System.out.println("");
     }
     //4. complete getPositionFromTail
     //and modify return 1
@@ -85,12 +88,18 @@ public class DoubleLinkedList {
     int getPositionFromTail(int data){
         if (isEmpty()) {
             System.out.println("Linked list still empty");
+            return -1;
         }
-        Node tmp = head;
-        while (tmp.n != null) {
-            tmp = tmp.n;
+        Node tmp = tail;
+        int position = 0;
+        while (tmp != null) {
+            if (tmp.data == data) {
+                return position;
+            }
+            tmp = tmp.p;
+            position++;
         }
-        return tmp.data;
+        return -1;
     }
     //5. complete getLastPositionFromTail
     //and modify return 1
@@ -99,18 +108,38 @@ public class DoubleLinkedList {
      * and the searching start from last
      */
     int getLastPositionFromTail(int data){
-        
-        
-        return 1;
+        if (isEmpty()) {
+            System.out.println("Linked list still empty");
+            return -1;
+        }
+        Node tmp = tail;
+        int position = 0;
+        int lastPosition = -1;
+        while (tmp != null) {
+            if (tmp.data == data) {
+                lastPosition = position;
+            }
+            tmp = tmp.p;
+            position++;
+        }
+        return lastPosition;
     }
     //6. complete getAverage
     /**
      * this method will return average from all data
      */
     double getAverage(){
-        double average = 0;
+        if (isEmpty()) {
+            return 0;
+        }
         //complete here
-        
+        Node tmp = head;
+        int sum = 0;
+        while (tmp != null) {
+            sum += tmp.data;
+            tmp = tmp.n;
+        }
+        double average = sum/size;
         return average;
     }
     //7. complete the missing code getNodeByIndex
@@ -151,11 +180,16 @@ public class DoubleLinkedList {
      *    2 data at the middle
      */
     double getMedian(){
-        double median = 0;
+        if (isEmpty()) {
+            return 0;
+        }
         //complete to calculate median below
         sort();
-        
-        return median;
+        if (size % 2 == 1) {
+            return getNodeByIndex(size / 2).data;
+        } else {
+            return (getNodeByIndex(size / 2 - 1).data + getNodeByIndex(size / 2).data) / 2.0;
+        }
     }
     //9. complete main to make a simulation
     public static void main(String[] args){
@@ -169,7 +203,19 @@ public class DoubleLinkedList {
         dll.deleteFirst();
         dll.print();
         //continue to call addLast, deleteLast, printFromTail, 
+        dll.addLast(25);
+        dll.print();
+        dll.addLast(30);
+        dll.print();
+        dll.deleteLast();
+        dll.print();
+        dll.printFromTail();
         //getPositionFromTail, getLastPositionFromTail,
+        System.out.println("Position of 45 from tail: " + dll.getPositionFromTail(45));
+        System.out.println("Last position of 15 from tail: " + dll.getLastPositionFromTail(15));
+        System.out.println("The node in index 2 is: " + dll.getNodeByIndex(2).data);
         //getAverage, getMedian
+        System.out.println("Average of data: " + dll.getAverage());
+        System.out.println("Median of data: " + dll.getMedian());
     }
 }
