@@ -54,9 +54,21 @@ public class DoubleLinkedList {
      * this method will remove tail
      */
     void deleteLast(){
-       
-        
+       if (isEmpty()) {
+        System.out.println("Linked list is still empty, cannot remove"); 
+        } else if (head.next == null) {
+            head = null;
+            size--;
+            return;
+        }
+        Node current = head;
+        while (current.n.n != null) {
+            current = current.n;
+        }
+        current.n = null;
+        size--;
     }
+
     //3. complete the printFromTail
     /**
      * this method will print all data from tail to head
