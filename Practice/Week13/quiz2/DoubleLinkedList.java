@@ -42,10 +42,10 @@ public class DoubleLinkedList {
     void addLast(int data){
         Node nu = new Node(data);
         if(isEmpty()){
-            head = tail = nu;
+            addFirst(data);
         }else{
-           //complete here
-           
+            nu.next = head;
+            head = nu;
         }
         size++;
     }
