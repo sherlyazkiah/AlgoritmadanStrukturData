@@ -83,9 +83,14 @@ public class DoubleLinkedList {
      * this method will return the position of data from last
      */
     int getPositionFromTail(int data){
-        
-       
-        return 1;
+        if (isEmpty()) {
+            System.out.println("Linked list still empty");
+        }
+        Node tmp = head;
+        while (tmp.n != null) {
+            tmp = tmp.n;
+        }
+        return tmp.data;
     }
     //5. complete getLastPositionFromTail
     //and modify return 1
