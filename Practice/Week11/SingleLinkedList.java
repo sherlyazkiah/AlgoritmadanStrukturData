@@ -73,6 +73,31 @@ public class SingleLinkedList {
         }
     }
 
+    public void insertBefore(int key, int input) {
+        if (isEmpty()) {
+            System.out.println("Linked list is empty. Cannot insert before " + key);
+            return;
+        }
+
+        if (head.data == key) {
+            addFirst(input);
+            return;
+        }
+
+        Node ndInput = new Node(input, null);
+        Node temp = head;
+        while (temp.next != null && temp.next.data != key) {
+            temp = temp.next;
+        }
+
+        if (temp.next == null) {
+            System.out.println("Key " + key + " not found in the list.");
+        } else {
+            ndInput.next = temp.next;
+            temp.next = ndInput;
+        }
+    }
+
     public int getData(int index) {
         Node tmp = head;
         for (int i = 0; i < index; i++) {

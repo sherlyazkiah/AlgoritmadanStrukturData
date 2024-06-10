@@ -27,5 +27,10 @@ public class SLLMain {
         singLL.print();
         singLL.removeLast();
         singLL.print();
+
+        singLL.insertBefore(833, 444);
+        singLL.print();
+        singLL.insertBefore(1000, 333); // Key not in list
+        singLL.print();
     }
 }
