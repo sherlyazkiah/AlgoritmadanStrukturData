@@ -4,8 +4,17 @@ public class BinaryTreeArray {
     int[] data;
     int idxLast;
 
-    public BinaryTreeArray(){
-        data = new int[10];
+    BinaryTreeArray(int size) {
+        data = new int[size];
+        idxLast = -1;
+    }
+
+    void add(int data) {
+        if (idxLast < this.data.length - 1) {
+            this.data[++idxLast] = data;
+        } else {
+            System.out.println("Tree is full");
+        }
     }
 
     void populateData(int data[], int idxLast){
