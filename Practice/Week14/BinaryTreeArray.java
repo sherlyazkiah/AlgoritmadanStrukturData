@@ -29,4 +29,20 @@ public class BinaryTreeArray {
             traverseInOrder(2*idxStart+2);
         }
     }
+
+    void traversePreOrder(int index) {
+        if (index <= idxLast) {
+            System.out.print(data[index] + " ");
+            traversePreOrder(2 * index + 1);
+            traversePreOrder(2 * index + 2);
+        }
+    }
+
+    void traversePostOrder(int index) {
+        if (index <= idxLast) {
+            traversePostOrder(2 * index + 1);
+            traversePostOrder(2 * index + 2);
+            System.out.print(data[index] + " ");
+        }
+    }
 }
