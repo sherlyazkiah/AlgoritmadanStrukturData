@@ -11,6 +11,22 @@ public class BinaryTree {
         return root == null;
     }
 
+    void addRecursive(int data) {
+        root = addRecursive(root, data);
+    }
+
+    private Node addRecursive(Node current, int data) {
+        if (current == null) {
+            return new Node(data);
+        }
+        if (data < current.data) {
+            current.left = addRecursive(current.left, data);
+        } else if (data > current.data) {
+            current.right = addRecursive(current.right, data);
+        }
+        return current;
+    }
+
     void add(int data) {
         if (isEmpty()) { //tree is empty
             root = new Node(data);
