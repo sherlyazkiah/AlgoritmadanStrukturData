@@ -86,6 +86,17 @@ public class BinaryTree {
         return root.right == null ? root.data : findLargestValue(root.right);
     }
 
+    void printLeafNodes(Node node) {
+        if (node == null) {
+            return;
+        }
+        if (node.left == null && node.right == null) {
+            System.out.print(node.data + " ");
+        }
+        printLeafNodes(node.left);
+        printLeafNodes(node.right);
+    }
+
     void traversePreOrder(Node node) {
         if (node != null) {
             System.out.println(" " + node.data);
