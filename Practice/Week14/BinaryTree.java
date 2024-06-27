@@ -70,6 +70,22 @@ public class BinaryTree {
         return hasil;
     }
 
+    int findSmallestValue() {
+        return findSmallestValue(root);
+    }
+
+    int findSmallestValue(Node root) {
+        return root.left == null ? root.data : findSmallestValue(root.left);
+    }
+
+    int findLargestValue() {
+        return findLargestValue(root);
+    }
+
+    int findLargestValue(Node root) {
+        return root.right == null ? root.data : findLargestValue(root.right);
+    }
+
     void traversePreOrder(Node node) {
         if (node != null) {
             System.out.println(" " + node.data);
